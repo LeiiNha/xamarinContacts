@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Contacts.Model
 {
-    class Person
+    public class Person
     {
         string name;
         public string Name

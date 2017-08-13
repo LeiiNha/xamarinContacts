@@ -22,8 +22,7 @@ namespace Contacts
         {
             if (e.SelectedItem == null) { return; }
             Person person = e.SelectedItem as Person;
-            DisplayAlert("Selected", person.Name, "OK");
-            Navigation.PushAsync(new ContactDetails());
+            Navigation.PushAsync(new ContactDetails(person));
 
         }
 

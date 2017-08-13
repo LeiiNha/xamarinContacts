@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Contacts.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,12 @@ namespace Contacts.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ContactDetails : ContentPage
     {
-        public ContactDetails()
+        Person person;
+        public ContactDetails(Person personPar)
         {
             InitializeComponent();
+            person = personPar;
+            DisplayAlert("Detalhes", person.Name, "OK");
         }
 
         private void ToolbarItem_Clicked(object sender, EventArgs e)
