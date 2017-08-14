@@ -9,18 +9,22 @@ namespace Contacts.ViewModel
 {
     class NewContactViewModel
     {
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Address { get; set; }
+        public string PhoneNumber { get; set; }
 
-        public NewContactViewModel()
+
+        public void AddToPeople()
         {
-            
-
-            for (int i = 0; i < 5; i++)
-            {
-                Person person = new Person();
-                person.Name = "fernando " + i.ToString();
-                person.Address = i.ToString() + " Omelete";
-                person.ImageSource = "man" + i.ToString() + ".jpeg";
-            }
+            Person person = new Person();
+            person.Name = Name;
+            person.Email = Email;
+            person.Address = Address;
+            person.PhoneNumber = PhoneNumber;
+            App.Database.SavePersonAsync(person);
         }
+
+        
     }
 }

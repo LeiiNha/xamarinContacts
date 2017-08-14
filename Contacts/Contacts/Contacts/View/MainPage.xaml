@@ -2,14 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Contacts"
-             x:Class="Contacts.MainPage">
+             x:Class="Contacts.MainPage"
+             x:Name="ContactsList">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="ToolbarItem_Clicked" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemsSource="{Binding People}" ItemSelected="ListView_ItemSelected" HasUnevenRows="True">
+            <SearchBar Placeholder="Pesquisar contactos" TextChanged="SearchBar_TextChanged"/>
+            <ListView ItemsSource="{Binding People}" ItemSelected="ListView_ItemSelected" HasUnevenRows="True" x:Name="PeopleListView">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -18,7 +20,7 @@
                                     <Image Source="{Binding ImageSource}" WidthRequest="75" HeightRequest="75" HorizontalOptions="Start"></Image>
                                     <Label Text="{Binding Name}" FontSize="20" FontAttributes="Bold"></Label>
                                     <Label Text="{Binding Address}" FontSize="20" FontAttributes="Bold"></Label>
-                                    <Button Text="Ligar" HorizontalOptions="End"></Button>
+                                    <Button Text="Ligar" HorizontalOptions="End" CommandParameter="{Binding .}" Clicked="Button_Clicked" Command="{Binding Path=BindingContext.startCallCommand, Source={x:Reference ContactsList}}"></Button>
                                 </StackLayout>
                             </ContentView>
                         </ViewCell>

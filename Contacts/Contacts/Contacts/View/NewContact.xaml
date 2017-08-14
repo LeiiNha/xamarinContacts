@@ -1,16 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Contacts.View.NewContact">
+             x:Class="Contacts.NewContact">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Save" Clicked="ToolbarItem_Clicked" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout Padding="20">
-            <Entry Placeholder="Nome" PlaceholderColor="Gray" FontSize="20" />
-            <Entry Placeholder="Endereço" PlaceholderColor="Gray" FontSize="20" />
-            <Entry Placeholder="Email" PlaceholderColor="Gray" FontSize="20" />
-            <Entry Placeholder="Telefone" PlaceholderColor="Gray" FontSize="20" />
+        <StackLayout Padding="20" VerticalOptions="Start">
+            <StackLayout Orientation="Horizontal">
+                <Entry x:Name="NameEntry" Placeholder="Nome" PlaceholderColor="Gray" FontSize="20" Text="{Binding Name}" />
+                <Entry x:Name="AddressEntry" Placeholder="Endereço" PlaceholderColor="Gray" FontSize="20" Text="{Binding Address}" />
+                <Entry x:Name="EmailEntry" Placeholder="Email" PlaceholderColor="Gray" FontSize="20" Text="{Binding Email}" />
+            </StackLayout>
+            <Entry x:Name="PhoneEntry" Placeholder="Telefone" PlaceholderColor="Gray" FontSize="20" Text="{Binding PhoneNumber}" />
+            <Button Text="Add" Clicked="Button_Clicked"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

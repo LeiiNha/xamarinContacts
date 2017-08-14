@@ -12,10 +12,17 @@ namespace Contacts
 {
     public partial class MainPage : ContentPage
     {
+       MainPageViewModel mv;
         public MainPage()
         {
             InitializeComponent();
-            BindingContext = new MainPageViewModel();
+            mv = new MainPageViewModel();
+            BindingContext = mv;
+            MessagingCenter.Subscribe<MainPageViewModel>(new MainPageViewModel(), "ButtonClicked", (sender) =>
+             {
+                 DisplayAlert("Message", "Button Clicked!", "Ok");
+             });
+            
         }
         
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -29,6 +36,24 @@ namespace Contacts
         private void ToolbarItem_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new NewContact());
+        }
+
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            PeopleListView.BeginRefresh();
+
+            if (string.IsNullOrWhiteSpace(e.NewTextValue))
+                PeopleListView.ItemsSource = mv.People;
+            else
+                PeopleListView.ItemsSource = mv.People.Where(i => i.Name.Contains(e.NewTextValue));
+
+            PeopleListView.EndRefresh();
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            
+            DisplayAlert("Apertei butaum", "Button Clicked!", "Ok");
         }
     }
 }

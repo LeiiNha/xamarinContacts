@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,49 +9,33 @@ namespace Contacts.Model
 {
     public class Person
     {
-        string name;
+        [PrimaryKey, AutoIncrement]
+        public int ID { get; set; }
         public string Name
         {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                name = value;
-            }
+            get;
+            set;
         }
-
-        private string email;
-
+        
         public string Email
         {
-            get { return email; }
-            set { email = value; }
+            get;
+            set;
         }
-
-        private string address;
-
         public string Address
         {
-            get { return address; }
-            set { address = value; }
+            get;
+            set;
         }
-
-        private string phoneNumber;
-
         public string PhoneNumber
         {
-            get { return phoneNumber; }
-            set { phoneNumber = value; }
+            get;
+            set;
         }
-
-        private string imageSource;
-
         public string ImageSource
         {
-            get { return imageSource; }
-            set { imageSource = value; }
+            get;
+            set;
         }
 
 
