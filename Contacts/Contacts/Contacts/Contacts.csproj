@@ -38,15 +38,20 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Data\GroupDatabase.cs" />
     <Compile Include="Data\IFileHelper.cs" />
     <Compile Include="Data\PersonDatabase.cs" />
     <Compile Include="Helper\PhoneUtils.cs" />
+    <Compile Include="Model\Group.cs" />
     <Compile Include="Model\Person.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
     <Compile Include="ViewModel\NewContactViewModel.cs" />
     <Compile Include="View\ContactDetails.xaml.cs">
       <DependentUpon>ContactDetails.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\GroupList.xaml.cs">
+      <DependentUpon>GroupList.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -101,6 +106,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="View\NewContact.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\GroupList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

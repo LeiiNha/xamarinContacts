@@ -9,7 +9,11 @@
         <StackLayout Padding="20" VerticalOptions="Start">
             <StackLayout Orientation="Horizontal">
                 <Entry x:Name="NameEntry" Placeholder="Nome" PlaceholderColor="Gray" FontSize="20" Text="{Binding Name}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
                 <Entry x:Name="AddressEntry" Placeholder="Endereço" PlaceholderColor="Gray" FontSize="20" Text="{Binding Address}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
                 <Entry x:Name="EmailEntry" Placeholder="Email" PlaceholderColor="Gray" FontSize="20" Text="{Binding Email}" />
             </StackLayout>
             <Entry x:Name="PhoneEntry" Placeholder="Telefone" PlaceholderColor="Gray" FontSize="20" Text="{Binding PhoneNumber}" />

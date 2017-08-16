@@ -16,18 +16,35 @@
                     <DataTemplate>
                         <ViewCell>
                             <ContentView>
-                                <StackLayout Orientation="Horizontal">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                                     <Image Source="{Binding ImageSource}" WidthRequest="75" HeightRequest="75" HorizontalOptions="Start"></Image>
-                                    <Label Text="{Binding Name}" FontSize="20" FontAttributes="Bold"></Label>
-                                    <Label Text="{Binding Address}" FontSize="20" FontAttributes="Bold"></Label>
-                                    <Button Text="Ligar" HorizontalOptions="End" CommandParameter="{Binding .}" Clicked="Button_Clicked" Command="{Binding Path=BindingContext.startCallCommand, Source={x:Reference ContactsList}}"></Button>
+                                    <StackLayout HorizontalOptions="CenterAndExpand">
+                                        <Label Text="{Binding Name}" FontSize="20" FontAttributes="Bold"></Label>
+                                        <Label Text="{Binding Address}" FontSize="20" FontAttributes="Bold"></Label>
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions="EndAndExpand">
+                                        <Button Text="Ligar" HorizontalOptions="End" CommandParameter="{Binding .}" Clicked="Button_Clicked" Command="{Binding Path=BindingContext.startCallCommand, Source={x:Reference ContactsList}}"></Button>
+                                    </StackLayout>
                                 </StackLayout>
                             </ContentView>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        </StackLayout>
+            <Grid VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Row="0" Grid.Column="0" Text="Contatos" HorizontalOptions="Start"></Button>
+                <Button Grid.Row="0" Grid.Column="1" Text="Grupos" Clicked="Button_Clicked_1" HorizontalOptions="End"></Button>
+            </Grid>
+            
+
+        </StackLayout>        
     </ContentPage.Content>
 
 </ContentPage>

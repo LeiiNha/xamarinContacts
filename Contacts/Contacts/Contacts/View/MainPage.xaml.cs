@@ -55,5 +55,12 @@ namespace Contacts
             
             DisplayAlert("Apertei butaum", "Button Clicked!", "Ok");
         }
+
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+            var root = Navigation.NavigationStack[0];
+            Navigation.InsertPageBefore(new GroupList(), root);
+            Navigation.PopToRootAsync();
+        }
     }
 }

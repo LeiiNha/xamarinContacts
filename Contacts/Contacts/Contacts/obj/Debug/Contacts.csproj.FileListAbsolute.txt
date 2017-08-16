@@ -22,3 +22,5 @@ C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.View.NewContact.xaml.g.cs
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.dll
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.pdb
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.csprojResolveAssemblyReference.cache
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.View.GroupList.xaml.g.cs
