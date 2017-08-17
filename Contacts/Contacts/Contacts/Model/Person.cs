@@ -38,6 +38,16 @@ namespace Contacts.Model
             set;
         }
 
+        public string NameSort
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(Name) || Name.Length == 0) return "?";
+
+                return Name[0].ToString().ToUpper();
+            }
+        }
+
 
 
     }

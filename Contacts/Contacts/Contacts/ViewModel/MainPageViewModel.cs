@@ -19,30 +19,45 @@ namespace Contacts.ViewModel
 
         public ObservableCollection<Person> People { get; set; } = new ObservableCollection<Person>();
 
+        public ObservableCollection<Grouping<string, Person>> GroupedPeople { get; set; }
+
         public ICommand startCallCommand { get; set; }
 
         public MainPageViewModel()
         {
             
-            Person person = new Person();
-            person.Name = "erica ";
-            person.Address = " Quack";
-            person.ImageSource = "man1.jpeg";
-            person.PhoneNumber = "283772922";
-            People.Add(person);
+            
 
             PopulatePeople();
+
+            
             
             startCallCommand = new Command<Person>((model) => HandleCall(model));
         }
 
         private async void PopulatePeople()
         {
-            List<Person> people = await App.Database.GetPeopleAsync();
-            foreach (Person person in people)
+            List<Person> people = await App.PersonDatabase.GetPeopleAsync();
+            Person person = new Person();
+            person.Name = "erica ";
+            person.Address = " Quack";
+            person.ImageSource = "man1.jpeg";
+            person.PhoneNumber = "283772922";
+            People.Add(person);
+            foreach (Person person2 in people)
             {
-                People.Add(person);
+                People.Add(person2);
             }
+            createGrouping(People);  
+        }
+
+        public void createGrouping(ObservableCollection<Person> list)
+        {
+            var sorted = from personn in list
+                         orderby personn.Name
+                         group personn by personn.NameSort into personGroup
+                         select new Grouping<string, Person>(personGroup.Key, personGroup);
+            GroupedPeople = new ObservableCollection<Grouping<string, Person>>(sorted);
         }
 
         private void HandleCall(Person person)

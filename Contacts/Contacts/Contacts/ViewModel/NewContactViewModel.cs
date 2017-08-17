@@ -22,7 +22,7 @@ namespace Contacts.ViewModel
             person.Email = Email;
             person.Address = Address;
             person.PhoneNumber = PhoneNumber;
-            App.Database.SavePersonAsync(person);
+            App.PersonDatabase.SavePersonAsync(person);
         }
 
         

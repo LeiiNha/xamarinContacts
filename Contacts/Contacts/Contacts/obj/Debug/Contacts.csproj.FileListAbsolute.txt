@@ -24,3 +24,7 @@ C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.pdb
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.csprojResolveAssemblyReference.cache
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.View.GroupList.xaml.g.cs
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.View.NewGroup.xaml.g.cs
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Contacts.dll.config
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\SQLite.Net.dll
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\SQLiteNetExtensions.dll

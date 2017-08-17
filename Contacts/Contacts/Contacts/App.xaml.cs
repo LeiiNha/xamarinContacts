@@ -10,7 +10,8 @@ namespace Contacts
 {
     public partial class App : Application
     {
-        static PersonDatabase database;
+        static PersonDatabase personDatabase;
+        static GroupDatabase groupDatabase;
         public App()
         {
             InitializeComponent();
@@ -33,17 +34,31 @@ namespace Contacts
             // Handle when your app resumes
         }
 
-        public static PersonDatabase Database
+        public static PersonDatabase PersonDatabase
         {
             get
             {
-                if (database == null)
+                if (personDatabase == null)
                 {
-                    database = new PersonDatabase(
+                    personDatabase = new PersonDatabase(
                         DependencyService.Get<IFileHelper>().GetLocalFilePath("PersonSQLite.db3"));
 
                 }
-                return database;
+                return personDatabase;
+            }
+        }
+
+        public static GroupDatabase GroupDataBase
+        {
+            get
+            {
+                if (groupDatabase == null)
+                {
+                    groupDatabase = new GroupDatabase(
+                        DependencyService.Get<IFileHelper>().GetLocalFilePath("GroupSQLite.db3"));
+
+                }
+                return groupDatabase;
             }
         }
     }

@@ -7,6 +7,7 @@ using Xamarin.Forms;
 using Contacts.View;
 using Contacts.ViewModel;
 using Contacts.Model;
+using System.Collections.ObjectModel;
 
 namespace Contacts
 {
@@ -18,11 +19,17 @@ namespace Contacts
             InitializeComponent();
             mv = new MainPageViewModel();
             BindingContext = mv;
-            MessagingCenter.Subscribe<MainPageViewModel>(new MainPageViewModel(), "ButtonClicked", (sender) =>
+           /* MessagingCenter.Subscribe<MainPageViewModel>(new MainPageViewModel(), "ButtonClicked", (sender) =>
              {
                  DisplayAlert("Message", "Button Clicked!", "Ok");
              });
-            
+
+            PeopleListView.ItemsSource = mv.GroupedPeople;
+            PeopleListView.IsGroupingEnabled = true;
+            PeopleListView.GroupDisplayBinding = new Binding("Key");
+            PeopleListView.GroupShortNameBinding = new Binding("Key");
+            */
+             
         }
         
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -43,9 +50,18 @@ namespace Contacts
             PeopleListView.BeginRefresh();
 
             if (string.IsNullOrWhiteSpace(e.NewTextValue))
-                PeopleListView.ItemsSource = mv.People;
+            {
+                mv.createGrouping(mv.People);
+                PeopleListView.ItemsSource = mv.GroupedPeople;
+            }
             else
-                PeopleListView.ItemsSource = mv.People.Where(i => i.Name.Contains(e.NewTextValue));
+            {
+                ObservableCollection<Person> list = new ObservableCollection<Person>(mv.People.Where(i => i.Name.Contains(e.NewTextValue)));
+                mv.createGrouping(list);
+                PeopleListView.ItemsSource = mv.GroupedPeople;
+
+
+            }
 
             PeopleListView.EndRefresh();
         }
