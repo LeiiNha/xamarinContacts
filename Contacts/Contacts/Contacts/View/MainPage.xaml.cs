@@ -18,31 +18,24 @@ namespace Contacts
         {
             InitializeComponent();
             mv = new MainPageViewModel();
-            BindingContext = mv;
-           /* MessagingCenter.Subscribe<MainPageViewModel>(new MainPageViewModel(), "ButtonClicked", (sender) =>
-             {
-                 DisplayAlert("Message", "Button Clicked!", "Ok");
-             });
-
-            PeopleListView.ItemsSource = mv.GroupedPeople;
-            PeopleListView.IsGroupingEnabled = true;
-            PeopleListView.GroupDisplayBinding = new Binding("Key");
-            PeopleListView.GroupShortNameBinding = new Binding("Key");
-            */
-             
+            BindingContext = mv;             
         }
         
-        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem == null) { return; }
-            Person person = e.SelectedItem as Person;
-            Navigation.PushAsync(new ContactDetails(person));
+            Person person = e.SelectedItem as Person;           
+            var vmDetails = new ContactDetailsViewModel();
+            vmDetails.person = person;
+            var contactDetails = new ContactDetails(vmDetails);           
+            
+           await Navigation.PushAsync(contactDetails);
 
         }
 
         private void ToolbarItem_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new NewContact());
+            Navigation.PushAsync(new NewContact(new NewContactViewModel()));
         }
 
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)

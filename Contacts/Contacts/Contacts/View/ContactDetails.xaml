@@ -1,16 +1,69 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Contacts.View.ContactDetails">
+             x:Class="Contacts.View.ContactDetails"
+             x:Name="ContactDetails">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Delete" Clicked="ToolbarItem_Clicked" />
-        <ToolbarItem Text="Edit" Clicked="ToolbarItem_Clicked" />
+        <ToolbarItem Clicked="Edit_Clicked" Icon="edit.png" />
+        <ToolbarItem Clicked="Delete_Clicked" Icon="trash.png"/>
     </ContentPage.ToolbarItems>
    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin Forms!" />
+        <StackLayout Padding="20">
+            <StackLayout Orientation="Horizontal">
+                <Image Source="{Binding person.ImageSource}" WidthRequest="75" HeightRequest="75" HorizontalOptions="CenterAndExpand"></Image>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                <Label Text="Nome:" FontSize="Medium" HorizontalOptions="Start" />
+                <Label Text="{Binding person.Name}" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+                <Label Text="Email:" FontSize="Medium" HorizontalOptions="Start" />
+                <Label Text="{Binding person.Email}" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"  />
+                <Image Source="email.png" HeightRequest="30" WidthRequest="30" x:Name="emailImg" HorizontalOptions="End" ></Image>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+                <Label Text="Endereço:" FontSize="Medium" HorizontalOptions="Start" />
+                <Label Text="{Binding person.Address}" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"  />
+            </StackLayout>
+            <StackLayout>
+                <ListView ItemsSource="{Binding person.PhoneNumber}" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ContentView>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                                        <Label Text="{Binding Desc}" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+                                        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                            <Label Text="{Binding Number}" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center"  />
+                                        </StackLayout>
+                                        <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
+                                            
+                                                <Image Source="sms.png" HeightRequest="30" WidthRequest="30" x:Name="smsImg">
+                                                   <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer NumberOfTapsRequired="1" CommandParameter="{Binding .}" Command="{Binding Path=BindingContext.startSMSCommand, Source={x:Reference ContactDetails}}">
+                                                    </TapGestureRecognizer>
+                                                </Image.GestureRecognizers>
+                                                </Image>
+                                            
+                                            
+                                                <Image Source="phone.png" HeightRequest="30" WidthRequest="30" x:Name="phoneImg" HorizontalOptions="End">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer NumberOfTapsRequired="1" CommandParameter="{Binding .}" Command="{Binding Path=BindingContext.startCallCommand, Source={x:Reference ContactDetails}}">
+                                                    </TapGestureRecognizer>
+                                                </Image.GestureRecognizers>
+                                                </Image>
+                                            
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ContentView>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                   
+                </ListView>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage> 

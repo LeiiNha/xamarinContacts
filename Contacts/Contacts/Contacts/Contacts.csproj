@@ -45,6 +45,8 @@
     <Compile Include="Model\Group.cs" />
     <Compile Include="Model\Grouping.cs" />
     <Compile Include="Model\Person.cs" />
+    <Compile Include="Model\PhoneNumber.cs" />
+    <Compile Include="ViewModel\ContactDetailsViewModel.cs" />
     <Compile Include="ViewModel\GroupListViewModel.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
     <Compile Include="ViewModel\NewContactViewModel.cs" />

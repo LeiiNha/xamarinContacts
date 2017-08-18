@@ -14,22 +14,40 @@ namespace Contacts
 	public partial class NewContact : ContentPage
 	{
         NewContactViewModel vm;
-		public NewContact ()
+        
+		public NewContact (NewContactViewModel vmPar)
 		{
 			InitializeComponent ();
-            vm = new NewContactViewModel();
+            vm = vmPar;
             BindingContext = vm;
+            
 		}
 
         private void ToolbarItem_Clicked(object sender, EventArgs e)
         {
-
+          
         }
 
         private void Button_Clicked(object sender, EventArgs e)
         {
             vm.AddToPeople();
-            Navigation.PushAsync(new MainPage());
+            Navigation.PopAsync();
+            
+        }
+
+        private void AddNewNumber_Clicked(object sender, EventArgs e)
+        {
+            NumbersList.BeginRefresh();
+            vm.AddNewNumber();
+            NumbersList.EndRefresh();
+        }
+
+        private void PhoneDescPicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var picker = (Picker)sender;
+            var selectedItem = (string)picker.SelectedItem;
+            vm.PhoneNumber.Last().Desc = selectedItem;
+
         }
     }
 }

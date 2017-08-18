@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using Newtonsoft.Json;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,10 +28,25 @@ namespace Contacts.Model
             get;
             set;
         }
-        public string PhoneNumber
+
+        public string PhoneNumbersBlobbed { get; set; }
+
+        [Ignore]
+        private List<PhoneNumber> phoneNumber { get; set; }
+        [Ignore]
+        public List<PhoneNumber> PhoneNumber
         {
-            get;
-            set;
+            get
+            {
+                if (PhoneNumbersBlobbed != null) { return JsonConvert.DeserializeObject<List<PhoneNumber>>(PhoneNumbersBlobbed); }
+                return phoneNumber;
+
+            }
+            set
+            {
+                if (value.Count > 0) { PhoneNumbersBlobbed = JsonConvert.SerializeObject(value); }
+                phoneNumber = value;
+            }
         }
         public string ImageSource
         {

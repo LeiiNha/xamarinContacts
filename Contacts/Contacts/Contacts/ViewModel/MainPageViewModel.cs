@@ -42,7 +42,8 @@ namespace Contacts.ViewModel
             person.Name = "erica ";
             person.Address = " Quack";
             person.ImageSource = "man1.jpeg";
-            person.PhoneNumber = "283772922";
+            person.PhoneNumber = new List<PhoneNumber>();
+            person.PhoneNumber.Add(new PhoneNumber { Desc = "Casa", Number = "4332232" });
             People.Add(person);
             foreach (Person person2 in people)
             {
@@ -62,7 +63,7 @@ namespace Contacts.ViewModel
 
         private void HandleCall(Person person)
         {
-            PhoneUtils.StartPhoneAction(person.PhoneNumber, PhoneActions.Call);
+            PhoneUtils.StartPhoneAction(person.PhoneNumber[0].Number, PhoneActions.Call);
 
         }
 
