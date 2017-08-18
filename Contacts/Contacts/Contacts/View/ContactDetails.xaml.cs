@@ -1,5 +1,4 @@
-﻿using Contacts.Model;
-using Contacts.ViewModel;
+﻿using Contacts.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,9 +38,10 @@ namespace Contacts.View
             await Navigation.PushAsync(newContact);   
         }
 
-        private void Delete_Clicked(object sender, EventArgs e)
+        private async void Delete_Clicked(object sender, EventArgs e)
         {
-
+            await vm.deleteContact();
+            await Navigation.PopAsync();
         }
     }
 }
