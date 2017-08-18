@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Contacts.View.GroupList"
+             x:Name="GroupList">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar Placeholder="Pesquisar Grupos" TextChanged="SearchBar_TextChanged"/>
+            <ListView ItemsSource="{Binding Groups}" HasUnevenRows="True"
+                      x:Name="GroupListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ContentView>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    <StackLayout HorizontalOptions="CenterAndExpand">
+                                        <Label Text="{Binding Name}" FontSize="20" FontAttributes="Bold"></Label>
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions="EndAndExpand">
+                                        <Button Text="SMS" HorizontalOptions="End" CommandParameter="{Binding .}" Command="{Binding Path=BindingContext.startSMSCommand, Source={x:Reference GroupList}}"></Button>
+                                        <Button Text="E-Mail" HorizontalOptions="End" CommandParameter="{Binding .}" Command="{Binding Path=BindingContext.startEmailCommand, Source={x:Reference GroupList}}"></Button>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ContentView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Row="0" Grid.Column="0" Text="Contatos" Clicked="BtnContacts_Clicked" HorizontalOptions="Start"></Button>
+                <Button Grid.Row="0" Grid.Column="1" Text="Grupos" HorizontalOptions="End"></Button>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
