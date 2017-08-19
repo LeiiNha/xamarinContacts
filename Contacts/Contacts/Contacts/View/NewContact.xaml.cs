@@ -1,6 +1,7 @@
 ﻿using Contacts.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,13 +15,14 @@ namespace Contacts
 	public partial class NewContact : ContentPage
 	{
         NewContactViewModel vm;
+
         
-		public NewContact (NewContactViewModel vmPar)
+
+        public NewContact (NewContactViewModel vmPar)
 		{
 			InitializeComponent ();
             vm = vmPar;
             BindingContext = vm;
-            
 		}
 
         private void ToolbarItem_Clicked(object sender, EventArgs e)

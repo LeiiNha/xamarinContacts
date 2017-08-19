@@ -1,6 +1,7 @@
 ﻿using Contacts.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,11 +15,23 @@ namespace Contacts.ViewModel
         public string LastName { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }
-        public List<PhoneNumber> PhoneNumber { get; set; }
+        //public List<PhoneNumber> PhoneNumber { get; set; }
+        public ObservableCollection<PhoneNumber> PhoneNumber { get; set; }
 
         public NewContactViewModel()
         {
-            if (PhoneNumber == null) { PhoneNumber = new List<Model.PhoneNumber>(); }            
+            if (PhoneNumber == null) { PhoneNumber = new ObservableCollection<PhoneNumber>(); }
+            AddNewNumber();
+        }
+
+        public void fillPerson(Person person)
+        {
+            FirstName = person.FirstName;
+            LastName = person.LastName;
+            Email = person.Email;
+            Address = person.Address;
+            PhoneNumber = new ObservableCollection<PhoneNumber>(person.PhoneNumber);
+            id = person.ID;
         }
 
 
@@ -30,7 +43,7 @@ namespace Contacts.ViewModel
             person.Email = Email;
             person.ID = id;
             person.Address = Address;
-            person.PhoneNumber = PhoneNumber;
+            person.PhoneNumber = new List<Model.PhoneNumber>(PhoneNumber);
             App.PersonDatabase.SavePersonAsync(person);
         }
 

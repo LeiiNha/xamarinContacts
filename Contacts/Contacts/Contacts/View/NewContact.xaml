@@ -7,40 +7,45 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Padding="20" VerticalOptions="Start">
-            <StackLayout Orientation="Horizontal">
-                <Entry x:Name="FirstNameEntry" Placeholder="Nome" PlaceholderColor="Gray" FontSize="20" Text="{Binding FirstName}" />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Entry x:Name="FirstNameEntry" Placeholder="Nome" PlaceholderColor="Gray" FontSize="20" Text="{Binding FirstName}" HorizontalOptions="FillAndExpand" />
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Entry x:Name="LastNameEntry" Placeholder="Nome" PlaceholderColor="Gray" FontSize="20" Text="{Binding LastName}" />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Entry x:Name="LastNameEntry" Placeholder="Nome" PlaceholderColor="Gray" FontSize="20" Text="{Binding LastName}" HorizontalOptions="FillAndExpand" />
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Entry x:Name="AddressEntry" Placeholder="Endereço" PlaceholderColor="Gray" FontSize="20" Text="{Binding Address}" />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Entry x:Name="AddressEntry" Placeholder="Endereço" PlaceholderColor="Gray" FontSize="20" Text="{Binding Address}" HorizontalOptions="FillAndExpand" />
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Entry x:Name="EmailEntry" Placeholder="Email" PlaceholderColor="Gray" FontSize="20" Text="{Binding Email}" />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Entry x:Name="EmailEntry" Placeholder="Email" PlaceholderColor="Gray" FontSize="20" Text="{Binding Email}" HorizontalOptions="FillAndExpand" />
             </StackLayout>
-            <StackLayout HorizontalOptions="FillAndExpand">
-                <ListView ItemsSource="{Binding PhoneNumber}" HasUnevenRows="True" x:Name="NumbersList">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <ContentView>
-                                    <StackLayout HorizontalOptions="Start">
-                                        <Picker x:Name="PhoneDescPicker" SelectedIndex="0" HorizontalOptions="Start" Title="Tipo de telefone" SelectedIndexChanged="PhoneDescPicker_SelectedIndexChanged" >                                            
-                                            <Picker.Items>
-                                                <x:String>Casa</x:String>
-                                                <x:String>Trabalho</x:String>
-                                                <x:String>Celular</x:String>
-                                            </Picker.Items>
-                                        </Picker>
-                                        <Entry x:Name="PhoneEntry" Placeholder="Telefone" PlaceholderColor="Gray" FontSize="20" Text="{Binding Number}" />
-                                    </StackLayout>
-                                </ContentView>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <ListView ItemsSource="{Binding PhoneNumber}" HasUnevenRows="True" x:Name="NumbersList">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ContentView>
+                                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                            <Picker x:Name="PhoneDescPicker" SelectedIndex="0" HorizontalOptions="FillAndExpand" Title="Tipo de telefone" SelectedIndexChanged="PhoneDescPicker_SelectedIndexChanged" >
+                                                <Picker.Items>
+                                                    <x:String>Casa</x:String>
+                                                    <x:String>Trabalho</x:String>
+                                                    <x:String>Celular</x:String>
+                                                </Picker.Items>
+                                            </Picker>
+                                            <Entry x:Name="PhoneEntry" Placeholder="Telefone" PlaceholderColor="Gray" FontSize="20" Text="{Binding Number}" HorizontalOptions="FillAndExpand" />
+                                        </StackLayout>
+                                    </ContentView>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
 
-                </ListView>
+                    </ListView>
+                </Grid>
                 <Button Text="Adicionar novo numero" Clicked="AddNewNumber_Clicked"></Button>
             </StackLayout>
            

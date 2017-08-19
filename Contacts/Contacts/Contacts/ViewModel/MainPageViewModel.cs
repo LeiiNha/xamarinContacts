@@ -17,7 +17,7 @@ namespace Contacts.ViewModel
 
         public string Name { get; set; }
 
-        public ObservableCollection<Person> People { get; set; } = new ObservableCollection<Person>();
+        public ObservableCollection<Person> People { get; set; }
 
         public ObservableCollection<Grouping<string, Person>> GroupedPeople { get; set; }
 
@@ -32,6 +32,7 @@ namespace Contacts.ViewModel
         private async void PopulatePeople()
         {
             List<Person> people = await App.PersonDatabase.GetPeopleAsync();
+            People = new ObservableCollection<Person>(people);
             Person person = new Person();
             person.FirstName = "erica ";
             person.LastName = "Blah";
@@ -48,10 +49,6 @@ namespace Contacts.ViewModel
             person.PhoneNumber = new List<PhoneNumber>();
             person.PhoneNumber.Add(new PhoneNumber { Desc = "Trabalho", Number = "2333222" });
             People.Add(person);
-            foreach (Person person2 in people)
-            {
-                People.Add(person2);
-            }
             createGrouping(People);  
         }
 

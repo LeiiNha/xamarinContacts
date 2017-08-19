@@ -29,12 +29,7 @@ namespace Contacts.View
         private async void Edit_Clicked(object sender, EventArgs e)
         {
             var vmNewContact = new NewContactViewModel();
-            vmNewContact.FirstName = vm.person.FirstName;
-            vmNewContact.LastName = vm.person.LastName;
-            vmNewContact.Email = vm.person.Email;
-            vmNewContact.Address = vm.person.Address;
-            vmNewContact.PhoneNumber = vm.person.PhoneNumber;
-            vmNewContact.id = vm.person.ID;
+            vmNewContact.fillPerson(vm.person);            
             var newContact = new NewContact(vmNewContact);            
             await Navigation.PushAsync(newContact);   
         }

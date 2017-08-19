@@ -1,12 +1,3 @@
-C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.View.ContactDetails.xaml.g.cs
-C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.View.MainPage.xaml.g.cs
-C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.App.xaml.g.cs
-C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.View.NewContact.xaml.g.cs
-C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.View.GroupList.xaml.g.cs
-C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.View.NewGroup.xaml.g.cs
-C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.View.NamesView.xaml.g.cs
-C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.csprojResolveAssemblyReference.cache
-C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.csproj.CoreCompileInputs.cache
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Contacts.dll.config
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Contacts.dll
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Contacts.pdb
@@ -31,5 +22,14 @@ C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Xamarin.Forms.Platform.pdb
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Xamarin.Forms.Xaml.pdb
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Xamarin.Forms.Xaml.xml
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.csproj.CoreCompileInputs.cache
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.View.ContactDetails.xaml.g.cs
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.View.MainPage.xaml.g.cs
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.App.xaml.g.cs
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.View.NewContact.xaml.g.cs
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.View.GroupList.xaml.g.cs
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.View.NewGroup.xaml.g.cs
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.View.NamesView.xaml.g.cs
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.dll
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.pdb
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.csprojResolveAssemblyReference.cache
