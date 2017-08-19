@@ -28,15 +28,15 @@
                     <DataTemplate>
                         <ViewCell>
                             <ContentView>
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                                   <!-- <Image Source="{Binding ImageSource}" WidthRequest="75" HeightRequest="75" HorizontalOptions="Start"></Image> -->                                    
-                                    <local:NamesView Text="{Binding Initials}" HeightRequest="50" WidthRequest="60"></local:NamesView>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
+                                    <Image Source="{Binding ImageSource}" WidthRequest="75" HeightRequest="75" HorizontalOptions="Start" IsVisible="{Binding HasImage}"></Image>
+                                    <local:NamesView Text="{Binding Initials}" HeightRequest="75" WidthRequest="85" IsVisible="{Binding NoImage}"></local:NamesView>
                                     <StackLayout HorizontalOptions="CenterAndExpand">
-                                        <Label Text="{Binding FirstName}" FontSize="20" FontAttributes="Bold"></Label>
+                                        <Label Text="{Binding FullName}" FontSize="20" FontAttributes="Bold"></Label>
                                         <Label Text="{Binding Address}" FontSize="20" FontAttributes="Bold"></Label>
                                     </StackLayout>
                                     <StackLayout HorizontalOptions="EndAndExpand">
-                                        <Button Text="Ligar" HorizontalOptions="End" CommandParameter="{Binding .}" Clicked="Button_Clicked" Command="{Binding Path=BindingContext.startCallCommand, Source={x:Reference ContactsList}}"></Button>
+                                        <Button Text="Ligar" HorizontalOptions="End" CommandParameter="{Binding .}" Command="{Binding Path=BindingContext.startCallCommand, Source={x:Reference ContactsList}}"></Button>
                                     </StackLayout>
                                 </StackLayout>
                             </ContentView>

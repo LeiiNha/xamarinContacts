@@ -25,13 +25,7 @@ namespace Contacts.ViewModel
 
         public MainPageViewModel()
         {
-            
-            
-
-            PopulatePeople();
-
-            
-            
+            PopulatePeople();            
             startCallCommand = new Command<Person>((model) => HandleCall(model));
         }
 
@@ -42,15 +36,31 @@ namespace Contacts.ViewModel
             person.FirstName = "erica ";
             person.LastName = "Blah";
             person.Address = " Quack";
-            person.ImageSource = "man1.jpeg";
+            person.ImageSource = "icon.png";
             person.PhoneNumber = new List<PhoneNumber>();
             person.PhoneNumber.Add(new PhoneNumber { Desc = "Casa", Number = "4332232" });
+            People.Add(person);
+            person = new Person();
+            person.FirstName = "Erica";
+            person.LastName = "Geraldes";
+            person.Address = "Brasil";
+            person.ImageSource = null;
+            person.PhoneNumber = new List<PhoneNumber>();
+            person.PhoneNumber.Add(new PhoneNumber { Desc = "Trabalho", Number = "2333222" });
             People.Add(person);
             foreach (Person person2 in people)
             {
                 People.Add(person2);
             }
             createGrouping(People);  
+        }
+
+        public ContactDetailsViewModel getDetailsModel(object o)
+        {
+            Person person = (Person)o;
+            var vmDetails = new ContactDetailsViewModel();
+            vmDetails.person = person;
+            return vmDetails;
         }
 
         public void createGrouping(ObservableCollection<Person> list)

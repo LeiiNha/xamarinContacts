@@ -17,6 +17,7 @@ namespace Contacts.ViewModel
         public ICommand startCallCommand { get; set; }
         public ICommand startEmailCommand { get; set; }
         public ICommand startSMSCommand { get; set; }
+        
 
         public ContactDetailsViewModel()
         {

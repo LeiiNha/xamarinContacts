@@ -34,6 +34,31 @@ namespace Contacts.Model
         public string PhoneNumbersBlobbed { get; set; }
 
         [Ignore]
+        public bool NoImage
+        {
+            get
+            {
+                if (String.IsNullOrEmpty(ImageSource)) { return true; } else { return false; }
+            }
+        }
+        [Ignore]
+        public bool HasImage
+        {
+            get
+            {
+                if (!String.IsNullOrEmpty(ImageSource)) { return true; } else { return false; }
+            }
+        }
+
+        [Ignore]
+        public string FullName
+        {
+            get
+            {
+                return FirstName + " " + LastName;
+            }
+        }
+        [Ignore]
         public string Initials
         {
             get

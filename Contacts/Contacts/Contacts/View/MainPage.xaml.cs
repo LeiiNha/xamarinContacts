@@ -23,11 +23,9 @@ namespace Contacts
         
         async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            if (e.SelectedItem == null) { return; }
-            Person person = e.SelectedItem as Person;           
-            var vmDetails = new ContactDetailsViewModel();
-            vmDetails.person = person;
-            var contactDetails = new ContactDetails(vmDetails);           
+           if (e.SelectedItem == null) { return; }
+           var vmDetails = mv.getDetailsModel(e.SelectedItem);
+           var contactDetails = new ContactDetails(vmDetails);         
             
            await Navigation.PushAsync(contactDetails);
 
@@ -49,22 +47,14 @@ namespace Contacts
             }
             else
             {
-                ObservableCollection<Person> list = new ObservableCollection<Person>(mv.People.Where(i => i.FirstName.Contains(e.NewTextValue)));
+                ObservableCollection<Person> list = new ObservableCollection<Person>(mv.People.Where(i => i.FullName.Contains(e.NewTextValue)));
                 mv.createGrouping(list);
                 PeopleListView.ItemsSource = mv.GroupedPeople;
-
-
             }
 
             PeopleListView.EndRefresh();
         }
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            
-            DisplayAlert("Apertei butaum", "Button Clicked!", "Ok");
-        }
-
+        
         private void Button_Clicked_1(object sender, EventArgs e)
         {
             var root = Navigation.NavigationStack[0];

@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Contacts.View"
              x:Class="Contacts.View.ContactDetails"
              x:Name="ContactDetails">
 
@@ -11,8 +12,10 @@
    
     <ContentPage.Content>
         <StackLayout Padding="20">
-            <StackLayout Orientation="Horizontal">
-                <Image Source="{Binding person.ImageSource}" WidthRequest="75" HeightRequest="75" HorizontalOptions="CenterAndExpand"></Image>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand">
+                <Image Source="{Binding person.ImageSource}" WidthRequest="75" HeightRequest="75" IsVisible="{Binding person.HasImage}"></Image>
+                <local:NamesView Text="{Binding person.Initials}" HeightRequest="75" WidthRequest="85" IsVisible="{Binding person.NoImage}"></local:NamesView>
+                
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
                 <Label Text="Nome:" FontSize="Medium" HorizontalOptions="Start" />
