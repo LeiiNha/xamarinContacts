@@ -8,7 +8,10 @@
     <ContentPage.Content>
         <StackLayout Padding="20" VerticalOptions="Start">
             <StackLayout Orientation="Horizontal">
-                <Entry x:Name="NameEntry" Placeholder="Nome" PlaceholderColor="Gray" FontSize="20" Text="{Binding Name}" />
+                <Entry x:Name="FirstNameEntry" Placeholder="Nome" PlaceholderColor="Gray" FontSize="20" Text="{Binding FirstName}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Entry x:Name="LastNameEntry" Placeholder="Nome" PlaceholderColor="Gray" FontSize="20" Text="{Binding LastName}" />
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Entry x:Name="AddressEntry" Placeholder="Endereço" PlaceholderColor="Gray" FontSize="20" Text="{Binding Address}" />

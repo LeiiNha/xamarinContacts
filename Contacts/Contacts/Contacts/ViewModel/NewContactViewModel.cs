@@ -10,7 +10,8 @@ namespace Contacts.ViewModel
     public class NewContactViewModel
     {
         public int id { get; set; }
-        public string Name { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }
         public List<PhoneNumber> PhoneNumber { get; set; }
@@ -24,7 +25,8 @@ namespace Contacts.ViewModel
         public void AddToPeople()
         {
             Person person = new Person();
-            person.Name = Name;
+            person.FirstName = FirstName;
+            person.LastName = LastName;
             person.Email = Email;
             person.ID = id;
             person.Address = Address;

@@ -16,7 +16,7 @@
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
                 <Label Text="Nome:" FontSize="Medium" HorizontalOptions="Start" />
-                <Label Text="{Binding person.Name}" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+                <Label Text="{Binding person.FirstName}" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
                 <Label Text="Email:" FontSize="Medium" HorizontalOptions="Start" />

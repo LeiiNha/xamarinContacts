@@ -49,7 +49,7 @@ namespace Contacts
             }
             else
             {
-                ObservableCollection<Person> list = new ObservableCollection<Person>(mv.People.Where(i => i.Name.Contains(e.NewTextValue)));
+                ObservableCollection<Person> list = new ObservableCollection<Person>(mv.People.Where(i => i.FirstName.Contains(e.NewTextValue)));
                 mv.createGrouping(list);
                 PeopleListView.ItemsSource = mv.GroupedPeople;
 

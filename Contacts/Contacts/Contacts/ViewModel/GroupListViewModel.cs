@@ -24,7 +24,8 @@ namespace Contacts.ViewModel
 
             Group group = new Group();
             Person person = new Person();
-            person.Name = "erica ";
+            person.FirstName = "erica ";
+            person.LastName = "Blah";
             person.Address = " Quack";
             person.ImageSource = "man1.jpeg";
             person.PhoneNumber = new List<PhoneNumber>();

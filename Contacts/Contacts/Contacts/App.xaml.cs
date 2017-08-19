@@ -41,7 +41,7 @@ namespace Contacts
                 if (personDatabase == null)
                 {
                     personDatabase = new PersonDatabase(
-                        DependencyService.Get<IFileHelper>().GetLocalFilePath("PersonSQLite.db3"));
+                        DependencyService.Get<IFileHelper>().GetLocalFilePath("PeopleSQLite.db3"));
 
                 }
                 return personDatabase;

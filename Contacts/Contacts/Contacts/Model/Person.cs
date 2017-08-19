@@ -12,12 +12,14 @@ namespace Contacts.Model
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
-        public string Name
+        public string FirstName
         {
             get;
             set;
         }
         
+        public string LastName { get; set; }
+
         public string Email
         {
             get;
@@ -30,6 +32,15 @@ namespace Contacts.Model
         }
 
         public string PhoneNumbersBlobbed { get; set; }
+
+        [Ignore]
+        public string Initials
+        {
+            get
+            {
+                return FirstName.Substring(0,1).ToUpper() + LastName.Substring(0,1).ToUpper();
+            }
+        }
 
         [Ignore]
         private List<PhoneNumber> phoneNumber { get; set; }
@@ -58,9 +69,9 @@ namespace Contacts.Model
         {
             get
             {
-                if (string.IsNullOrEmpty(Name) || Name.Length == 0) return "?";
+                if (string.IsNullOrEmpty(FirstName) || FirstName.Length == 0) return "?";
 
-                return Name[0].ToString().ToUpper();
+                return FirstName[0].ToString().ToUpper();
             }
         }
 

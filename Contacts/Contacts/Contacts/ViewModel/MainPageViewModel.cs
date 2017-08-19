@@ -39,7 +39,8 @@ namespace Contacts.ViewModel
         {
             List<Person> people = await App.PersonDatabase.GetPeopleAsync();
             Person person = new Person();
-            person.Name = "erica ";
+            person.FirstName = "erica ";
+            person.LastName = "Blah";
             person.Address = " Quack";
             person.ImageSource = "man1.jpeg";
             person.PhoneNumber = new List<PhoneNumber>();
@@ -55,7 +56,7 @@ namespace Contacts.ViewModel
         public void createGrouping(ObservableCollection<Person> list)
         {
             var sorted = from personn in list
-                         orderby personn.Name
+                         orderby personn.FirstName
                          group personn by personn.NameSort into personGroup
                          select new Grouping<string, Person>(personGroup.Key, personGroup);
             GroupedPeople = new ObservableCollection<Grouping<string, Person>>(sorted);
