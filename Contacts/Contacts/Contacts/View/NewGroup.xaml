@@ -6,8 +6,8 @@
         <StackLayout>
             <Entry x:Name="NameEntry" Placeholder="Nome" PlaceholderColor="Gray" FontSize="20" Text="{Binding Name}" HorizontalOptions="FillAndExpand" />
             <Label x:Name="results" />
-            <Button Text="Clique" Clicked="OnClick"/>
-            <Button Text="Adicionar" Clicked="Button_Clicked"/>
+            <Button Text="Selecione as pessoas" Clicked="OnClick"/>
+            <Button Text="Salvar grupo" Clicked="Button_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

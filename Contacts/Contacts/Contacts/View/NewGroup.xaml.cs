@@ -73,7 +73,7 @@ namespace Contacts.View
             }
             else
             {
-                results.Text = "(none)";
+                results.Text = "Ninguém selecionado";
             }
         }
     }
