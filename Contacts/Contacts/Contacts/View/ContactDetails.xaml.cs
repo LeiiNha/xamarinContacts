@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Forms.Maps;
 
 namespace Contacts.View
 {
@@ -24,6 +25,27 @@ namespace Contacts.View
                 NumberOfTapsRequired = 1,
                 Command = vm.startEmailCommand
             });
+            var position = new Position(vm.person.Latitude, vm.person.Longitude);
+            var map = new Map(MapSpan.FromCenterAndRadius(position, Distance.FromKilometers(0.3)))
+            {
+                IsShowingUser = true,
+                HeightRequest = 300,
+                WidthRequest = 960,
+                VerticalOptions = LayoutOptions.FillAndExpand
+            };
+
+            var pin = new Pin
+            {
+                Type = PinType.Place,
+                Position = position,
+                Label = "Endereço de " + vm.person.FullName,
+                Address = vm.person.Address
+            };
+            map.Pins.Add(pin);
+
+            mapStackLayout.Children.Add(map);
+
+
         }
 
         private async void Edit_Clicked(object sender, EventArgs e)

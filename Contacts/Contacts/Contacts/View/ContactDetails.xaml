@@ -18,17 +18,17 @@
                 
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
-                <Label Text="Nome:" FontSize="Medium" HorizontalOptions="Start" />
-                <Label Text="{Binding person.FirstName}" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+                <Label Text="Nome:" FontSize="Small" HorizontalOptions="Start" />
+                <Label Text="{Binding person.FirstName}" FontSize="Small" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
-                <Label Text="Email:" FontSize="Medium" HorizontalOptions="Start" />
-                <Label Text="{Binding person.Email}" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"  />
+                <Label Text="Email:" FontSize="Small"  HorizontalOptions="Start" />
+                <Label Text="{Binding person.Email}" FontSize="Small" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"  />
                 <Image Source="email.png" HeightRequest="30" WidthRequest="30" x:Name="emailImg" HorizontalOptions="End" ></Image>
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
-                <Label Text="Endereço:" FontSize="Medium" HorizontalOptions="Start" />
-                <Label Text="{Binding person.Address}" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"  />
+                <Label Text="Endereço:" FontSize="Small" HorizontalOptions="Start" />
+                <Label Text="{Binding person.Address}" FontSize="Small" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"  />
             </StackLayout>
             <StackLayout>
                 <ListView ItemsSource="{Binding person.PhoneNumber}" HasUnevenRows="True">
@@ -37,9 +37,9 @@
                             <ViewCell>
                                 <ContentView>
                                     <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
-                                        <Label Text="{Binding Desc}" FontSize="Medium" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+                                        <Label Text="{Binding Desc}" FontSize="Small" HorizontalOptions="Start" VerticalOptions="Center"></Label>
                                         <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                                            <Label Text="{Binding Number}" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center"  />
+                                            <Label Text="{Binding Number}" FontSize="Small" FontAttributes="Bold" HorizontalOptions="Center"  />
                                         </StackLayout>
                                         <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand">
                                             
@@ -60,12 +60,15 @@
                                             
                                         </StackLayout>
                                     </StackLayout>
+                                    
                                 </ContentView>
                             </ViewCell>
                         </DataTemplate>
-                    </ListView.ItemTemplate>
-                   
+                    </ListView.ItemTemplate>                   
                 </ListView>
+                <StackLayout Spacing="0" x:Name="mapStackLayout">
+
+                </StackLayout>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
