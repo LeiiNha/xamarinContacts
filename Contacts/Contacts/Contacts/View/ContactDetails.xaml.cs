@@ -48,6 +48,21 @@ namespace Contacts.View
 
         }
 
+        private async void Share_Clicked(object sender, EventArgs e)
+        {
+            Plugin.Share.Abstractions.ShareMessage mssg = new Plugin.Share.Abstractions.ShareMessage();
+            mssg.Title = "Contato";
+            mssg.Text = vm.person.FullName + Environment.NewLine;
+            mssg.Text += vm.person.Address + Environment.NewLine;
+            foreach (var item in vm.person.PhoneNumber)
+            {
+                mssg.Text += item.Desc + " - " + item.Number + Environment.NewLine;
+            }
+                     
+
+            await Plugin.Share.CrossShare.Current.Share(mssg);
+        }
+
         private async void Edit_Clicked(object sender, EventArgs e)
         {
             var vmNewContact = new NewContactViewModel();
