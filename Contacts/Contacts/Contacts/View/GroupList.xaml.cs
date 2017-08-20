@@ -21,23 +21,23 @@ namespace Contacts.View
             BindingContext = mv;
         }
 
-        private void BtnContacts_Clicked(object sender, EventArgs e)
+        private async void BtnContacts_Clicked(object sender, EventArgs e)
         {
             var root = Navigation.NavigationStack[0];
             Navigation.InsertPageBefore(new MainPage(), root);
-            Navigation.PopToRootAsync();
+            await Navigation.PopToRootAsync();
         }
 
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
-           /* GroupList.BeginRefresh();
+            GroupListView.BeginRefresh();
 
             if (string.IsNullOrWhiteSpace(e.NewTextValue))
-                PeopleListView.ItemsSource = mv.Groups;
+                GroupListView.ItemsSource = mv.Groups;
             else
-                PeopleListView.ItemsSource = mv.Groups.Where(i => i.Name.Contains(e.NewTextValue));
+                GroupListView.ItemsSource = mv.Groups.Where(i => i.Name.Contains(e.NewTextValue));
 
-            PeopleListView.EndRefresh();*/
+            GroupListView.EndRefresh();
         }
 
         private void ToolbarItem_Clicked(object sender, EventArgs e)

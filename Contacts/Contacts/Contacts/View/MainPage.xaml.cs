@@ -43,13 +43,12 @@ namespace Contacts
 
             if (string.IsNullOrWhiteSpace(e.NewTextValue))
             {
-                mv.createGrouping(mv.People);
+                mv.createGrouping(false);
                 PeopleListView.ItemsSource = mv.GroupedPeople;
             }
             else
-            {
-                ObservableCollection<Person> list = new ObservableCollection<Person>(mv.People.Where(i => i.FullName.Contains(e.NewTextValue)));
-                mv.createGrouping(list);
+            {                
+                mv.createGrouping(true, e.NewTextValue);
                 PeopleListView.ItemsSource = mv.GroupedPeople;
             }
 

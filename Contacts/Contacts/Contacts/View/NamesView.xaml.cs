@@ -53,7 +53,6 @@ namespace Contacts.View
 
         public SKColor GetColorForText()
         {
-            //TODO: determine color based on Text property
             return SKColors.Orange;
         }
 

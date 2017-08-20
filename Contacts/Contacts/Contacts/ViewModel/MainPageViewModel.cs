@@ -62,8 +62,17 @@ namespace Contacts.ViewModel
             return vmDetails;
         }
 
-        public void createGrouping(ObservableCollection<Person> list)
+        public ObservableCollection<Person> getFilteredList()
         {
+            ObservableCollection<Person> list = new ObservableCollection<Person>(mv.People.Where(i => i.FullName.Contains(e.NewTextValue)));
+        }
+
+        public void createGrouping(bool filtered, string stringToSearch = "")
+        {
+            var list = People;
+            if (filtered) 
+                list = new ObservableCollection<Person>(mv.People.Where(i => i.FullName.Contains(stringToSearch)));
+            
             var sorted = from personn in list
                          orderby personn.FirstName
                          group personn by personn.NameSort into personGroup

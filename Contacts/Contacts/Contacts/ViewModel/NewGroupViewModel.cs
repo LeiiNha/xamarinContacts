@@ -21,5 +21,6 @@ namespace Contacts.ViewModel
             App.GroupDataBase.SaveGroupAsync(grou);
             
         }
+
     }
 }
