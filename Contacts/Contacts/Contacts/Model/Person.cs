@@ -33,6 +33,10 @@ namespace Contacts.Model
 
         public string PhoneNumbersBlobbed { get; set; }
 
+        public double Longitude { get; set; }
+
+        public double Latitude { get; set; }
+
         [Ignore]
         public bool NoImage
         {

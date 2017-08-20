@@ -18,7 +18,8 @@ namespace Contacts
         {
             InitializeComponent();
             mv = new MainPageViewModel();
-            BindingContext = mv;             
+            BindingContext = mv;
+            
         }
         
         async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)

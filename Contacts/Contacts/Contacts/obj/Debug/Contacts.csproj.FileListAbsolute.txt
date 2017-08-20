@@ -2,6 +2,8 @@ C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Contacts.dll
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Contacts.pdb
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Plugin.Geolocator.Abstractions.dll
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Plugin.Geolocator.dll
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Plugin.Media.Abstractions.dll
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Plugin.Media.dll
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\SkiaSharp.dll
@@ -13,9 +15,13 @@ C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\SQLitePCLRaw.batteries_v2.dll
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\SQLitePCLRaw.core.dll
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Xamarin.Forms.Core.dll
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Xamarin.Forms.Maps.dll
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Xamarin.Forms.Platform.dll
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Xamarin.Forms.Xaml.dll
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Plugin.Geolocator.pdb
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Plugin.Geolocator.xml
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Plugin.Geolocator.Abstractions.pdb
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Plugin.Media.pdb
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Plugin.Media.xml
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Plugin.Media.Abstractions.pdb
@@ -25,6 +31,7 @@ C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\SQLite-net.xml
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Xamarin.Forms.Core.pdb
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Xamarin.Forms.Core.xml
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Xamarin.Forms.Maps.xml
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Xamarin.Forms.Platform.pdb
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Xamarin.Forms.Xaml.pdb
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Xamarin.Forms.Xaml.xml
@@ -39,3 +46,4 @@ C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.View.CameraView.xaml.g.cs
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.dll
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.pdb
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.csprojResolveAssemblyReference.cache

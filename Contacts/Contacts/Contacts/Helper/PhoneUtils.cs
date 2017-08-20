@@ -25,7 +25,7 @@ namespace Contacts.Helper
                     Device.OpenUri(new Uri(String.Format("tel:{0}", numberOrEmail)));
                     break;
                 case PhoneActions.SMS:
-                    Device.OpenUri(new Uri(String.Format("sms:{0}", numberOrEmail)));
+                    Device.OpenUri(new Uri(String.Format("smsto:{0}", numberOrEmail)));
                     break;
                 case PhoneActions.Mail:
                     Device.OpenUri(new Uri(String.Format("mailto:{0}", numberOrEmail)));

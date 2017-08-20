@@ -9,8 +9,8 @@
         <ToolbarItem Text="Add" Clicked="ToolbarItem_Clicked" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
-            <SearchBar Placeholder="Pesquisar contactos" TextChanged="SearchBar_TextChanged"/>
+        <StackLayout Orientation="Vertical">
+            <SearchBar Placeholder="Pesquisar contactos" TextChanged="SearchBar_TextChanged" HorizontalOptions="FillAndExpand"/>
             
             <ListView ItemsSource="{Binding GroupedPeople}" ItemSelected="ListView_ItemSelected" HasUnevenRows="True"
                       x:Name="PeopleListView" IsGroupingEnabled="True" GroupDisplayBinding="{Binding Key}" 

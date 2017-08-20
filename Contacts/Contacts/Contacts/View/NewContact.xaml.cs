@@ -81,5 +81,26 @@ namespace Contacts
                 vm.ImageSource = photo.Path;
             }
         }
+
+        private async void Location_Clicked(object sender, EventArgs e)
+        {
+            var position = await Plugin.Geolocator.CrossGeolocator.Current.GetPositionAsync(timeout: new TimeSpan(0,0,0,5,0));
+             if (position != null) {                
+                vm.Latitude = position.Latitude;
+                vm.Longitude = position.Longitude;
+                try
+                {
+                    var possibleAddresses = await Plugin.Geolocator.CrossGeolocator.Current.GetAddressesForPositionAsync(position, "tVddRJQPKfkBxe8SYaX6~sa6b8cUD7r_nWF5KZwiiQw~AqktZmGWDGZgS6a3hiBnQnjLP4dOEoXfATQPwL7UW6TglpLA0AaebJyQw-9xD0hY");
+                    var addr = possibleAddresses.FirstOrDefault();
+                    AddressEntry.Text = addr.Thoroughfare + ", " + addr.SubThoroughfare + " - " + addr.SubLocality + " - " + addr.Locality + ", " + addr.CountryName;
+                }
+                catch (Exception ex)
+                {
+                    await DisplayAlert("Geolocator", "Não foi possível usar o gps do celular: " + ex.Message, "Ok");
+                }
+                
+
+            }
+        }
     }
 }

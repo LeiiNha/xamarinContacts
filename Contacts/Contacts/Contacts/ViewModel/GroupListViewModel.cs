@@ -55,7 +55,7 @@ namespace Contacts.ViewModel
             var phones = "";
             foreach (var person in group.People)
             {
-                phones += phones + person.PhoneNumber + ';';
+                phones += person.PhoneNumber[0].Number + ';';
             }            
             PhoneUtils.StartPhoneAction(phones, PhoneActions.SMS);
         }
@@ -63,9 +63,13 @@ namespace Contacts.ViewModel
         private void HandleEmail(Group group)
         {
             var emails = "";
-            foreach (var person in group.People)
+            if (group.People.Count > 1)
             {
-                emails += emails + person.Email + ';';
+                emails = group.People[0].Email + "?cc=";
+            }
+            for (int i = 1; i < group.People.Count; i++)
+            {
+                emails += group.People[i].Email + ";";
             }
             PhoneUtils.StartPhoneAction(emails, PhoneActions.Mail);
         }
