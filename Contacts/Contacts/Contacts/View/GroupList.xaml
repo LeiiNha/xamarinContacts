@@ -9,7 +9,15 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <SearchBar Placeholder="Pesquisar Grupos" TextChanged="SearchBar_TextChanged"/>
+            <SearchBar Placeholder="Pesquisar Grupos" TextChanged="SearchBar_TextChanged">
+                <SearchBar.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double"
+                            iOS="-1.0"
+                            Android="40.0"
+                            WinPhone="-1">
+                    </OnPlatform>
+                </SearchBar.HeightRequest>            
+            </SearchBar>
             <ListView ItemsSource="{Binding Groups}" HasUnevenRows="True"
                       x:Name="GroupListView">
                 <ListView.ItemTemplate>
