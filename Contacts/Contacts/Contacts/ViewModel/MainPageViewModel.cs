@@ -51,7 +51,7 @@ namespace Contacts.ViewModel
             person.PhoneNumber = new List<PhoneNumber>();
             person.PhoneNumber.Add(new PhoneNumber { Desc = "Trabalho", Number = "2333222" });
             People.Add(person);
-            createGrouping(People);  
+            createGrouping(false);  
         }
 
         public ContactDetailsViewModel getDetailsModel(object o)
@@ -61,17 +61,12 @@ namespace Contacts.ViewModel
             vmDetails.person = person;
             return vmDetails;
         }
-
-        public ObservableCollection<Person> getFilteredList()
-        {
-            ObservableCollection<Person> list = new ObservableCollection<Person>(mv.People.Where(i => i.FullName.Contains(e.NewTextValue)));
-        }
-
+        
         public void createGrouping(bool filtered, string stringToSearch = "")
         {
             var list = People;
             if (filtered) 
-                list = new ObservableCollection<Person>(mv.People.Where(i => i.FullName.Contains(stringToSearch)));
+                list = new ObservableCollection<Person>(People.Where(i => i.FullName.Contains(stringToSearch)));
             
             var sorted = from personn in list
                          orderby personn.FirstName
