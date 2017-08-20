@@ -17,6 +17,8 @@ namespace Contacts.ViewModel
 
         public string Name { get; set; }
 
+        public bool IsBusy { get; set; }
+
         public ObservableCollection<Person> People { get; set; }
 
         public ObservableCollection<Grouping<string, Person>> GroupedPeople { get; set; }
@@ -25,33 +27,43 @@ namespace Contacts.ViewModel
 
         public MainPageViewModel()
         {
-            PopulatePeople();            
+            People = new ObservableCollection<Person>();
+            IsBusy = false;
             startCallCommand = new Command<Person>((model) => HandleCall(model));
         }
 
-        private async void PopulatePeople()
+        public async Task PopulatePeople()
         {
-            await App.PersonDatabase.DeletePersonAsync(new Person { ID = 1 });
-            List<Person> people = await App.PersonDatabase.GetPeopleAsync();
+            if (IsBusy == false)
+            {
+                IsBusy = true;
+                People.Clear();
             
-            People = new ObservableCollection<Person>(people);
-            Person person = new Person();
-            person.FirstName = "erica ";
-            person.LastName = "Blah";
-            person.Address = " Quack";
-            person.ImageSource = "icon.png";
-            person.PhoneNumber = new List<PhoneNumber>();
-            person.PhoneNumber.Add(new PhoneNumber { Desc = "Casa", Number = "4332232" });
-            People.Add(person);
-            person = new Person();
-            person.FirstName = "Erica";
-            person.LastName = "Geraldes";
-            person.Address = "Brasil";
-            person.ImageSource = null;
-            person.PhoneNumber = new List<PhoneNumber>();
-            person.PhoneNumber.Add(new PhoneNumber { Desc = "Trabalho", Number = "2333222" });
-            People.Add(person);
-            createGrouping(false);  
+            List<Person> people = await App.PersonDatabase.GetPeopleAsync();
+                foreach (var item in people)
+                {
+                    People.Add(item);
+                }
+            
+                Person person = new Person();
+                person.FirstName = "erica ";
+                person.LastName = "Blah";
+                person.Address = " Quack";
+                person.ImageSource = "icon.png";
+                person.PhoneNumber = new List<PhoneNumber>();
+                person.PhoneNumber.Add(new PhoneNumber { Desc = "Casa", Number = "4332232" });
+                People.Add(person);
+                person = new Person();
+                person.FirstName = "Erica";
+                person.LastName = "Geraldes";
+                person.Address = "Brasil";
+                person.ImageSource = null;
+                person.PhoneNumber = new List<PhoneNumber>();
+                person.PhoneNumber.Add(new PhoneNumber { Desc = "Trabalho", Number = "2333222" });
+                People.Add(person);
+                createGrouping(false);
+                IsBusy = false;
+            }
         }
 
         public ContactDetailsViewModel getDetailsModel(object o)

@@ -20,7 +20,7 @@
                 </SearchBar.HeightRequest>
             </SearchBar>
 
-            <ListView ItemsSource="{Binding GroupedPeople}" ItemSelected="ListView_ItemSelected" HasUnevenRows="True"
+            <ListView ItemsSource="{Binding GroupedPeople}" ItemSelected="ListView_ItemSelected" HasUnevenRows="True" 
                       x:Name="PeopleListView" IsGroupingEnabled="True" GroupDisplayBinding="{Binding Key}" 
                       GroupShortNameBinding="{Binding Key}">
                 <ListView.GroupHeaderTemplate>

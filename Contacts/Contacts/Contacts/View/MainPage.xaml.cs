@@ -16,6 +16,7 @@ namespace Contacts
        MainPageViewModel mv;
         public MainPage()
         {
+            
             InitializeComponent();
             mv = new MainPageViewModel();
             BindingContext = mv;
@@ -60,6 +61,18 @@ namespace Contacts
             var root = Navigation.NavigationStack[0];
             Navigation.InsertPageBefore(new GroupList(), root);
             Navigation.PopToRootAsync();
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if (mv.IsBusy == false && mv.People.Count == 0) {
+                PeopleListView.BeginRefresh();
+                await mv.PopulatePeople();
+                PeopleListView.ItemsSource = mv.GroupedPeople;
+                PeopleListView.EndRefresh();
+            }
         }
     }
 }

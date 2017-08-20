@@ -44,5 +44,20 @@ namespace Contacts.View
         {
             Navigation.PushAsync(new NewGroup());
         }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if (mv.IsBusy == false && mv.Groups.Count == 0)
+            {
+                GroupListView.BeginRefresh();
+                await mv.PopulateGroups();
+                GroupListView.ItemsSource = mv.Groups;
+                GroupListView.EndRefresh();
+            }
+        
+        }
+
     }
 }

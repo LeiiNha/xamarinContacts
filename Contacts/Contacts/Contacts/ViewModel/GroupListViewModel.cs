@@ -13,42 +13,55 @@ namespace Contacts.ViewModel
 {
     class GroupListViewModel
     {
-        public ObservableCollection<Group> Groups { get; set; } = new ObservableCollection<Group>();
+        public ObservableCollection<Group> Groups { get; set; }
 
         public ICommand startEmailCommand { get; set; }
+
+        public bool IsBusy { get; set; }
 
         public ICommand startSMSCommand { get; set; }
 
         public GroupListViewModel()
         {
 
-            Group group = new Group();
-            Person person = new Person();
-            person.FirstName = "erica ";
-            person.LastName = "Blah";
-            person.Address = " Quack";
-            person.ImageSource = "man1.jpeg";
-            person.PhoneNumber = new List<PhoneNumber>();
-            person.PhoneNumber.Add(new PhoneNumber { Desc = "Casa", Number = "4332232" });
-            group.People = new List<Person>();
-            group.People.Add(person);
-            group.Name = "Grupo blabla";
-            Groups.Add(group);
-
-            PopulatePeople();
+            Groups = new ObservableCollection<Group>();
+            IsBusy = false;
+          
+            
 
             startEmailCommand = new Command<Group>((model) => HandleEmail(model));
             startSMSCommand = new Command<Group>((model) => HandleSMS(model));
         }
 
-        private async void PopulatePeople()
+        public async Task PopulateGroups()
         {
-            List<Group> groups = await App.GroupDataBase.GetGroupsAsync();
-            foreach (Group group in groups)
+            if (IsBusy == false)
             {
+                IsBusy = true;
+                Groups.Clear();
+
+                Group group = new Group();
+                Person person = new Person();
+
+                person.FirstName = "erica ";
+                person.LastName = "Blah";
+                person.Address = " Quack";
+                person.ImageSource = "man1.jpeg";
+                person.PhoneNumber = new List<PhoneNumber>();
+                person.PhoneNumber.Add(new PhoneNumber { Desc = "Casa", Number = "4332232" });
+                group.People = new List<Person>();
+                group.People.Add(person);
+                group.Name = "Grupo blabla";
                 Groups.Add(group);
+
+                List<Group> groups = await App.GroupDataBase.GetGroupsAsync();
+                foreach (Group item in groups)
+                {
+                    Groups.Add(item);
+                }
+                    IsBusy = false;
             }
-        }
+        }    
 
         private void HandleSMS(Group group)
         {
