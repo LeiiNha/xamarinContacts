@@ -1,4 +1,5 @@
-﻿using Contacts.ViewModel;
+﻿using Contacts.View;
+using Contacts.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -27,15 +28,15 @@ namespace Contacts
 
         private void ToolbarItem_Clicked(object sender, EventArgs e)
         {
-          
+            if ((!string.IsNullOrEmpty(FirstNameEntry.Text)) && (!string.IsNullOrEmpty(EmailEntry.Text)) && (vm.PhoneNumber.Count > 0)) {
+                vm.AddToPeople();
+                Navigation.PopAsync();
+            } else
+            {
+                DisplayAlert("Campo obrigatório", "Preencha pelo menos o primeiro nome, email e número", "Ok");
+            }
         }
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            vm.AddToPeople();
-            Navigation.PopAsync();
-            
-        }
+        
 
         private void AddNewNumber_Clicked(object sender, EventArgs e)
         {
@@ -50,6 +51,24 @@ namespace Contacts
             var selectedItem = (string)picker.SelectedItem;
             vm.PhoneNumber.Last().Desc = selectedItem;
 
+        }
+
+        private void Camera_Clicked(object sender, EventArgs e)
+        {
+            var camera = new CameraView();
+            camera.buttonCallback = takePicture;
+            Navigation.PushAsync(camera);
+        }
+
+        private async Task takePicture()
+        {
+            var photo = await Plugin.Media.CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions() { });
+
+            if (photo != null)
+            {
+                PhotoImage.Source = photo.Path;
+                vm.ImageSource = photo.Path;
+            }
         }
     }
 }

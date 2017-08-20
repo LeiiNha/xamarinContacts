@@ -7,11 +7,13 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Padding="20" VerticalOptions="Start">
+            <Image x:Name="PhotoImage" Source="{Binding ImageSource}" HorizontalOptions="FillAndExpand" WidthRequest="70" HeightRequest="70"></Image>
+            <Button Text="Tirar Foto" Clicked="Camera_Clicked"></Button>
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                <Entry x:Name="FirstNameEntry" Placeholder="Nome" PlaceholderColor="Gray" FontSize="20" Text="{Binding FirstName}" HorizontalOptions="FillAndExpand" />
+                <Entry x:Name="FirstNameEntry" Placeholder="Primeiro Nome" PlaceholderColor="Gray" FontSize="20" Text="{Binding FirstName}" HorizontalOptions="FillAndExpand" />
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                <Entry x:Name="LastNameEntry" Placeholder="Nome" PlaceholderColor="Gray" FontSize="20" Text="{Binding LastName}" HorizontalOptions="FillAndExpand" />
+                <Entry x:Name="LastNameEntry" Placeholder="Último Nome" PlaceholderColor="Gray" FontSize="20" Text="{Binding LastName}" HorizontalOptions="FillAndExpand" />
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                 <Entry x:Name="AddressEntry" Placeholder="Endereço" PlaceholderColor="Gray" FontSize="20" Text="{Binding Address}" HorizontalOptions="FillAndExpand" />
@@ -47,9 +49,8 @@
                     </ListView>
                 </Grid>
                 <Button Text="Adicionar novo numero" Clicked="AddNewNumber_Clicked"></Button>
-            </StackLayout>
-           
-            <Button Text="Add" Clicked="Button_Clicked"></Button>
+            </StackLayout>          
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -15,6 +15,7 @@ namespace Contacts.ViewModel
         public string LastName { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }
+        public string ImageSource { get; set; }
         //public List<PhoneNumber> PhoneNumber { get; set; }
         public ObservableCollection<PhoneNumber> PhoneNumber { get; set; }
 
@@ -30,6 +31,7 @@ namespace Contacts.ViewModel
             LastName = person.LastName;
             Email = person.Email;
             Address = person.Address;
+            ImageSource = person.ImageSource;
             PhoneNumber = new ObservableCollection<PhoneNumber>(person.PhoneNumber);
             id = person.ID;
         }
@@ -43,6 +45,7 @@ namespace Contacts.ViewModel
             person.Email = Email;
             person.ID = id;
             person.Address = Address;
+            person.ImageSource = ImageSource;
             person.PhoneNumber = new List<Model.PhoneNumber>(PhoneNumber);
             App.PersonDatabase.SavePersonAsync(person);
         }

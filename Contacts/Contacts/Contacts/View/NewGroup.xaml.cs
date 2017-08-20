@@ -24,13 +24,20 @@ namespace Contacts.View
 
         private void ToolbarItem_Clicked(object sender, EventArgs e)
         {
-
+            
         }
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            vm.AddToGroup();
-            Navigation.PopAsync();
+            if (!string.IsNullOrEmpty(NameEntry.Text) && (vm.People.Count != 0))
+            {
+                vm.AddToGroup();
+                Navigation.PopAsync();
+            }
+            else
+            {
+                DisplayAlert("Campo", "preencha o nome e as pessoas do grupo!", "Ok");
+            }
         }
 
         SelectMultipleBasePage<Person> multiPage;
@@ -44,7 +51,7 @@ namespace Contacts.View
             }
 
             if (multiPage == null)
-                multiPage = new SelectMultipleBasePage<Person>(items) { Title = "Check all that apply" };
+                multiPage = new SelectMultipleBasePage<Person>(items) { Title = "Selecione as pessoas para o grupo" };
 
             await Navigation.PushAsync(multiPage);
         }
@@ -61,6 +68,7 @@ namespace Contacts.View
                 foreach (var a in answers)
                 {
                     vm.People.Add(a);
+                    results.Text = a.FullName + Environment.NewLine;
                 }
             }
             else

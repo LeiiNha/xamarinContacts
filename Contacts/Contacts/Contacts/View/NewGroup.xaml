@@ -4,7 +4,7 @@
              x:Class="Contacts.View.NewGroup">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin Forms!" />
+            <Entry x:Name="NameEntry" Placeholder="Nome" PlaceholderColor="Gray" FontSize="20" Text="{Binding Name}" HorizontalOptions="FillAndExpand" />
             <Label x:Name="results" />
             <Button Text="Clique" Clicked="OnClick"/>
             <Button Text="Adicionar" Clicked="Button_Clicked"/>

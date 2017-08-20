@@ -37,7 +37,7 @@ namespace Contacts.View
             public WrappedItemSelectionTemplate() : base()
             {
                 Label name = new Label();
-                name.SetBinding(Label.TextProperty, new Binding("Item.Name"));
+                name.SetBinding(Label.TextProperty, new Binding("Item.FullName"));
                 Switch mainSwitch = new Switch();
                 mainSwitch.SetBinding(Switch.IsToggledProperty, new Binding("IsSelected"));
                 RelativeLayout layout = new RelativeLayout();

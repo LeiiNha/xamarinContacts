@@ -26,6 +26,10 @@
     <string>Contacts</string>
     <key>CFBundleIdentifier</key>
     <string>com.yourcompany.Contacts</string>
+    <key>NSCameraUsageDescription</key>
+    <string>This app needs access to the camera to take photos.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>This app needs access to photos.</string>
     <key>CFBundleVersion</key>
     <string>1.0</string>
     <key>CFBundleIconFiles</key>

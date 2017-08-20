@@ -33,3 +33,10 @@ C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.View.NamesView.xaml.g.cs
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.dll
 C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.pdb
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Plugin.Media.Abstractions.dll
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Plugin.Media.dll
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Plugin.Media.pdb
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Plugin.Media.xml
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Plugin.Media.Abstractions.pdb
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\bin\Debug\Plugin.Media.Abstractions.xml
+C:\Users\Erica Geraldes\Source\Repos\xamarinContacts\Contacts\Contacts\Contacts\obj\Debug\Contacts.View.CameraView.xaml.g.cs

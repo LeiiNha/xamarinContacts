@@ -16,7 +16,7 @@ namespace Contacts.ViewModel
         public void AddToGroup()
         {
             Group grou = new Group();
-            grou.Name = "teste2";
+            grou.Name = Name;
             grou.People = People;
             App.GroupDataBase.SaveGroupAsync(grou);
             

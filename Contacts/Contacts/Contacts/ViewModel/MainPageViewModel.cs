@@ -31,7 +31,9 @@ namespace Contacts.ViewModel
 
         private async void PopulatePeople()
         {
+            await App.PersonDatabase.DeletePersonAsync(new Person { ID = 1 });
             List<Person> people = await App.PersonDatabase.GetPeopleAsync();
+            
             People = new ObservableCollection<Person>(people);
             Person person = new Person();
             person.FirstName = "erica ";
