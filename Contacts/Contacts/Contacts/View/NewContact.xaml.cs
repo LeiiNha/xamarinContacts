@@ -60,6 +60,17 @@ namespace Contacts
             Navigation.PushAsync(camera);
         }
 
+        private async void TakePicture_Clicked(object sender, EventArgs e)
+        {
+            var file = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions() { });
+
+            if (file != null)
+            {
+                PhotoImage.Source = file.Path;
+                vm.ImageSource = file.Path;
+            }
+        }
+
         private async Task takePicture()
         {
             var photo = await Plugin.Media.CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions() { });

@@ -9,6 +9,7 @@
         <StackLayout Padding="20" VerticalOptions="Start">
             <Image x:Name="PhotoImage" Source="{Binding ImageSource}" HorizontalOptions="FillAndExpand" WidthRequest="70" HeightRequest="70"></Image>
             <Button Text="Tirar Foto" Clicked="Camera_Clicked"></Button>
+            <Button Text="Escolher da Galeria" Clicked="TakePicture_Clicked"></Button>
             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                 <Entry x:Name="FirstNameEntry" Placeholder="Primeiro Nome" PlaceholderColor="Gray" FontSize="20" Text="{Binding FirstName}" HorizontalOptions="FillAndExpand" />
             </StackLayout>
