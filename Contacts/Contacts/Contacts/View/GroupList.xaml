@@ -34,7 +34,12 @@
                                     </StackLayout>
                                 </StackLayout>
                             </ContentView>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="OnEdit" CommandParameter="{Binding .}" Text="More" />
+                                <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="Delete" IsDestructive="True" />
+                            </ViewCell.ContextActions>
                         </ViewCell>
+                        
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

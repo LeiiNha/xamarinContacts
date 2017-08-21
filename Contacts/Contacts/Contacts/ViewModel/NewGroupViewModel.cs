@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace Contacts.ViewModel
 {
-    class NewGroupViewModel
+    public class NewGroupViewModel
     {
+        public int ID { get; set; }
         public string Name { get; set; }
         public List<Person> People { get; set; }
 
@@ -17,6 +18,7 @@ namespace Contacts.ViewModel
         {
             Group grou = new Group();
             grou.Name = Name;
+            grou.ID = ID;
             grou.People = People;
             App.GroupDataBase.SaveGroupAsync(grou);
             

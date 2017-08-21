@@ -67,7 +67,7 @@ namespace Contacts
         {
             base.OnAppearing();
 
-            if (mv.IsBusy == false && mv.People.Count == 0) {
+            if (mv.IsBusy == false) {
                 PeopleListView.BeginRefresh();
                 await mv.PopulatePeople();
                 PeopleListView.ItemsSource = mv.GroupedPeople;

@@ -11,7 +11,7 @@ using Xamarin.Forms;
 
 namespace Contacts.ViewModel
 {
-    class GroupListViewModel
+   public class GroupListViewModel
     {
         public ObservableCollection<Group> Groups { get; set; }
 
@@ -20,15 +20,13 @@ namespace Contacts.ViewModel
         public bool IsBusy { get; set; }
 
         public ICommand startSMSCommand { get; set; }
+               
 
         public GroupListViewModel()
         {
-
             Groups = new ObservableCollection<Group>();
             IsBusy = false;
           
-            
-
             startEmailCommand = new Command<Group>((model) => HandleEmail(model));
             startSMSCommand = new Command<Group>((model) => HandleSMS(model));
         }
@@ -61,7 +59,23 @@ namespace Contacts.ViewModel
                 }
                     IsBusy = false;
             }
-        }    
+        }   
+        
+        public async Task deleteGroup(object groupObjc)
+        {
+            var group = (Group)groupObjc;
+            await App.GroupDataBase.DeleteGroupAsync(group);
+        }
+
+        public NewGroupViewModel editGroup(object groupObjc)
+        {
+            var group = (Group)groupObjc;
+            var _viewModel = new NewGroupViewModel();
+            _viewModel.Name = group.Name;
+            _viewModel.People = group.People;
+            _viewModel.ID = group.ID;
+            return _viewModel;
+        }
 
         private void HandleSMS(Group group)
         {

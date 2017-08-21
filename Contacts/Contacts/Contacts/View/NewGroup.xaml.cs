@@ -15,13 +15,23 @@ namespace Contacts.View
     public partial class NewGroup : ContentPage
     {
         NewGroupViewModel vm;
-        public NewGroup()
+        public NewGroup(NewGroupViewModel vmPar)
         {
             InitializeComponent();
-            vm = new NewGroupViewModel();
+            vm = vmPar;
             BindingContext = vm;
+            LoadPeople();
         }
-
+        private void LoadPeople()
+        {
+            if (vm.People != null)
+            {
+                foreach (var a in vm.People)
+                {
+                    results.Text = a.FullName + Environment.NewLine;
+                }
+            }
+        }
         private void ToolbarItem_Clicked(object sender, EventArgs e)
         {
             
@@ -47,11 +57,23 @@ namespace Contacts.View
             List<Person> people = await App.PersonDatabase.GetPeopleAsync();
             foreach (var item in people)
             {
-                items.Add(item);
+                items.Add(item);               
+                
             }
 
             if (multiPage == null)
+            {
                 multiPage = new SelectMultipleBasePage<Person>(items) { Title = "Selecione as pessoas para o grupo" };
+                for (int i = 0; i < multiPage.WrappedItems.Count; i++)
+                {
+                    var person = vm.People.Find(e => e.ID == multiPage.WrappedItems[i].Item.ID);
+                    if (person != null) { multiPage.WrappedItems[i].IsSelected = true; }
+                }
+                    
+            }
+             
+
+            
 
             await Navigation.PushAsync(multiPage);
         }

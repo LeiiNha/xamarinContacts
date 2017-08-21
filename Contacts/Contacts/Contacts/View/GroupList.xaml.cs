@@ -42,14 +42,29 @@ namespace Contacts.View
 
         private void ToolbarItem_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new NewGroup());
+            Navigation.PushAsync(new NewGroup(new NewGroupViewModel()));
+        }
+
+        private void OnEdit(object sender, EventArgs e)
+        {
+            var mi = ((MenuItem)sender);
+            var _viewModel = mv.editGroup(mi.CommandParameter);
+            var editGroup = new NewGroup(_viewModel);
+            Navigation.PushAsync(editGroup);
+        }
+        
+        public async void OnDelete(object sender, EventArgs e)
+        {
+            var mi = ((MenuItem)sender);
+            await mv.deleteGroup(mi.CommandParameter);
+
         }
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
 
-            if (mv.IsBusy == false && mv.Groups.Count == 0)
+            if (mv.IsBusy == false)
             {
                 GroupListView.BeginRefresh();
                 await mv.PopulateGroups();

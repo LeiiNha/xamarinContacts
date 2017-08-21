@@ -26,7 +26,6 @@ namespace Contacts.View
                     {
                         isSelected = value;
                         PropertyChanged(this, new PropertyChangedEventArgs("IsSelected"));
-                        //						PropertyChanged (this, new PropertyChangedEventArgs (nameof (IsSelected))); // C# 6
                     }
                 }
             }
@@ -73,18 +72,9 @@ namespace Contacts.View
                 ((ListView)sender).SelectedItem = null; //de-select
             };
             Content = mainList;
-            if (Device.OS == TargetPlatform.Windows)
-            {   // fix issue where rows are badly sized (as tall as the screen) on WinPhone8.1
-                mainList.RowHeight = 40;
-                // also need icons for Windows app bar (other platforms can just use text)
-                ToolbarItems.Add(new ToolbarItem("All", "check.png", SelectAll, ToolbarItemOrder.Primary));
-                ToolbarItems.Add(new ToolbarItem("None", "cancel.png", SelectNone, ToolbarItemOrder.Primary));
-            }
-            else
-            {
-                ToolbarItems.Add(new ToolbarItem("All", null, SelectAll, ToolbarItemOrder.Primary));
-                ToolbarItems.Add(new ToolbarItem("None", null, SelectNone, ToolbarItemOrder.Primary));
-            }
+            ToolbarItems.Add(new ToolbarItem("All", null, SelectAll, ToolbarItemOrder.Primary));
+            ToolbarItems.Add(new ToolbarItem("None", null, SelectNone, ToolbarItemOrder.Primary));
+            
         }
         void SelectAll()
         {
