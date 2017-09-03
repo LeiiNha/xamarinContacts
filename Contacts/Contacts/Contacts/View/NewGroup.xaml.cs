@@ -27,7 +27,7 @@ namespace Contacts.View
             {
                 foreach (var a in vm.People)
                 {
-                    results.Text = a.FullName + Environment.NewLine;
+                    results.Text += a.FullName + Environment.NewLine;
                 }
             }
         }
@@ -71,10 +71,6 @@ namespace Contacts.View
                 {
                     results.Text += a.FullName + Environment.NewLine;
                 }
-            }
-            else
-            {
-                results.Text = "Ninguém selecionado";
             }
         }
     }
