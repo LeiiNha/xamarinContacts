@@ -51,7 +51,7 @@
                                 <ViewCell>
                                     <ContentView>
                                         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                                            <Picker x:Name="PhoneDescPicker" SelectedIndex="0" HorizontalOptions="FillAndExpand" Title="Tipo de telefone" SelectedIndexChanged="PhoneDescPicker_SelectedIndexChanged" >
+                                            <Picker x:Name="PhoneDescPicker" SelectedItem="{Binding Desc}" HorizontalOptions="FillAndExpand" Title="Tipo de telefone">
                                                 <Picker.Items>
                                                     <x:String>Casa</x:String>
                                                     <x:String>Trabalho</x:String>

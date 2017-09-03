@@ -45,14 +45,6 @@ namespace Contacts
             NumbersList.EndRefresh();
         }
 
-        private void PhoneDescPicker_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var picker = (Picker)sender;
-            var selectedItem = (string)picker.SelectedItem;
-            vm.PhoneNumber.Last().Desc = selectedItem;
-
-        }
-
         private void Camera_Clicked(object sender, EventArgs e)
         {
             var camera = new CameraView();
