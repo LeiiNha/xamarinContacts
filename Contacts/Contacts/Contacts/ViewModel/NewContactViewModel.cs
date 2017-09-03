@@ -54,6 +54,7 @@ namespace Contacts.ViewModel
             person.Longitude = Longitude;
             person.PhoneNumber = new List<Model.PhoneNumber>(PhoneNumber);
             App.PersonDatabase.SavePersonAsync(person);
+           
         }
 
         public void AddNewNumber()

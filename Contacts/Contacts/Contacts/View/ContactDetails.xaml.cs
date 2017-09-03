@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Forms.Maps;
-
 namespace Contacts.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -17,6 +16,7 @@ namespace Contacts.View
         ContactDetailsViewModel vm;
         public ContactDetails(ContactDetailsViewModel viewmodel)
         {
+
             InitializeComponent();
             BindingContext = viewmodel;
             vm = viewmodel;
@@ -45,7 +45,7 @@ namespace Contacts.View
 
             mapStackLayout.Children.Add(map);
 
-
+          
         }
 
         private async void Share_Clicked(object sender, EventArgs e)
@@ -75,6 +75,14 @@ namespace Contacts.View
         {
             await vm.deleteContact();
             await Navigation.PopAsync();
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            await vm.refreshContact();
+            this.BindingContext = vm;
+
         }
     }
 }
