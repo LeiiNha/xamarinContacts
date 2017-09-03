@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Contacts.View;
 using Contacts.ViewModel;
-using Contacts.Model;
 using System.Collections.ObjectModel;
 
 namespace Contacts

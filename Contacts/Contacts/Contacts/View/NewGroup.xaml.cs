@@ -1,5 +1,4 @@
-﻿using Contacts.Model;
-using Contacts.ViewModel;
+﻿using Contacts.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,30 +49,11 @@ namespace Contacts.View
             }
         }
 
-        SelectMultipleBasePage<Person> multiPage;
+        
         async void OnClick(object sender, EventArgs ea)
         {
-            var items = new List<Person>();
-            List<Person> people = await App.PersonDatabase.GetPeopleAsync();
-            foreach (var item in people)
-            {
-                items.Add(item);               
-                
-            }
 
-            if (multiPage == null)
-            {
-                multiPage = new SelectMultipleBasePage<Person>(items) { Title = "Selecione as pessoas para o grupo" };
-                for (int i = 0; i < multiPage.WrappedItems.Count; i++)
-                {
-                    var person = vm.People.Find(e => e.ID == multiPage.WrappedItems[i].Item.ID);
-                    if (person != null) { multiPage.WrappedItems[i].IsSelected = true; }
-                }
-                    
-            }
-             
-
-            
+            var multiPage = await vm.GetMultiplePage();       
 
             await Navigation.PushAsync(multiPage);
         }
@@ -82,15 +62,14 @@ namespace Contacts.View
         {
             base.OnAppearing();
 
-            if (multiPage != null)
+            if (vm.MultiPage != null)
             {
                 results.Text = "";
-                var answers = multiPage.GetSelection();
-                vm.People = new List<Person>();
+                var answers = vm.MultiPage.GetSelection();                
+                vm.RepopulatePeople(answers);
                 foreach (var a in answers)
                 {
-                    vm.People.Add(a);
-                    results.Text = a.FullName + Environment.NewLine;
+                    results.Text += a.FullName + Environment.NewLine;
                 }
             }
             else
