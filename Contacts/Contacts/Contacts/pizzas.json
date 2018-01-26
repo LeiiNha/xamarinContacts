@@ -1,0 +1,69 @@
+{
+  "pizzas" : [ {
+    "flavor" : "pepperonni",
+    "price" : 12.1,
+    "type": "salt",
+    "extras": [
+      "cheese","pepperonni"]
+  }, {
+    "flavor" : "margherita",
+    "price" : 13.4,
+    "type": "salt",
+    "extras": [
+      "cheese","tomato"]
+  }, {
+    "flavor" : "bacon",
+    "price" : 14.4,
+    "type": "salt",
+    "extras": [
+      "cheese","bacon"]
+  }, {
+    "flavor" : "ham",
+    "price" : 12.4,
+    "type": "salt",
+    "extras": [
+      "cheese","ham"]
+  }, {
+    "flavor" : "meat",
+    "price" : 9.5,
+    "type": "salt",
+    "extras": [
+      "cheese","meat"]
+  }, {
+    "flavor" : "strogonoff",
+    "price" : 14.1,
+    "type": "salt",
+    "extras": [
+      "cheese"]
+  }, {
+    "flavor" : "chicken with cream cheese",
+    "price" : 11.1,
+    "type": "salt",
+    "extras": [
+      "cheese","chicken","cream cheese"]
+  }, {
+    "flavor" : "chocolate",
+    "price" : 16.2,
+    "type": "sugar",
+    "extras": [
+      "chocolate","whipped cream","ice cream"]
+  }, {
+    "flavor" : "white chocolate",
+    "price" : 16.2,
+    "type": "sugar",
+    "extras": [
+      "chocolate","whipped cream","ice cream"]
+  }, {
+    "flavor" : "banana with marshmallow",
+    "price" : 18.3,
+    "type": "sugar",
+    "extras": [
+      "banana","marshmallow","whipped cream","ice cream"]
+  }, {
+    "flavor" : "brownie",
+    "price" : 12.3,
+    "type": "sugar",
+    "extras": [
+      "brownie","whipped cream","ice cream"]
+  } ]
+}
